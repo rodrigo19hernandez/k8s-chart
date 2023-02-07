@@ -45,10 +45,10 @@ imagePullSecret: {}
 #   cpu: "1000m"
 resources:
   requests:
-    memory: "10000Mi"
+    memory: "5000Mi"
     cpu: "2000m"
   limits:
-    memory: "19000Mi"
+    memory: "5900Mi"
     cpu: "2000m"
 
 nameOverride: ""
