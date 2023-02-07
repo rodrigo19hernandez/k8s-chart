@@ -120,6 +120,10 @@ extraVolumes:
       path: /home/builder/.aws
       type: ""
     name: aws-creds
+  - hostPath:
+      path: /home/builder/buildscripts
+      type: ""
+    name: buildscript
 # specify extra list of volumeMounts
 extraVolumeMounts:
   - mountPath: /usr/local/maven
@@ -138,6 +142,8 @@ extraVolumeMounts:
     name: java-home
   - mountPath: /home/builder/.aws
     name: aws-creds
+  - mountPath: /home/builder/buildscripts
+    name: buildscript
 # specify extra list of containerPorts
 extraContainerPorts: []
 
