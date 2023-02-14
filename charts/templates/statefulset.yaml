@@ -16,6 +16,13 @@ spec:
       labels:
         {{- include "marklogic.selectorLabels" . | nindent 8 }}
     spec:
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: DoNotSchedule
+        labelSelector:
+          matchLabels:
+            {{- include "marklogic.selectorLabels" . | nindent 12 }}
       serviceAccountName: {{ include "marklogic.serviceAccountName" . }}
       {{- with .Values.affinity }}
       affinity: {{- toYaml . | nindent 8}}
